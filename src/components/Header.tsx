@@ -64,7 +64,7 @@ const Header = () => {
                         pl={3}
                         size={"4xl"}
                         fontWeight={"bold"}
-                        color={colorMode === "light" ? "gray.700" : "gray.200"}
+                        color={colorMode === "light" ? "gray.800" : "gray.200"}
                     >
                         Ryo
                     </Heading>
