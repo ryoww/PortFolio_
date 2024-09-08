@@ -54,6 +54,25 @@ const Header = () => {
         },
     ];
 
+    const linkInfos = [
+        {
+            to: "/",
+            linkName: "Home",
+        },
+        {
+            to: "/skills",
+            linkName: "Skills",
+        },
+        {
+            to: "/profile",
+            linkName: "Profile",
+        },
+        {
+            to: "/contact",
+            linkName: "Contact",
+        },
+    ];
+
     return (
         <>
             <HStack w={"100%"} p={6}>
@@ -73,21 +92,16 @@ const Header = () => {
                 <Spacer />
 
                 <HStack gap={3} pr={4}>
-                    <ChakraLink as={RouterLink} to={"/"}>
-                        Home
-                    </ChakraLink>
-                    <ChakraLink as={RouterLink} to={"/skills"}>
-                        Skills
-                    </ChakraLink>
-                    <ChakraLink as={RouterLink} to={"/profile"}>
-                        Profile
-                    </ChakraLink>
-                    <ChakraLink as={RouterLink} to={"/contact"}>
-                        Contact
-                    </ChakraLink>
+                    {linkInfos.map((linkinfo, index) => (
+                        <ChakraLink
+                            as={RouterLink}
+                            to={linkinfo.to}
+                            key={index}
+                        >
+                            {linkinfo.linkName}
+                        </ChakraLink>
+                    ))}
                 </HStack>
-
-                {/* <Spacer /> */}
 
                 {buttonInfos.map((buttonInfo, index) => (
                     <HeaderIcon
