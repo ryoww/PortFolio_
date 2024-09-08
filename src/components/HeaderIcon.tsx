@@ -2,7 +2,6 @@ import { Box, IconButton } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 export interface HeaderIconProps {
-    // id: number;
     ariaLabel: string;
     icon: ReactElement;
     onClick: () => void;
@@ -12,7 +11,7 @@ export interface HeaderIconProps {
 const HeaderIcon = ({ pr, ariaLabel, icon, onClick }: HeaderIconProps) => {
     return (
         <>
-            <Box pr={pr} bg={"gra.50"}>
+            <Box pr={pr}>
                 <IconButton
                     aria-label={ariaLabel}
                     icon={icon}

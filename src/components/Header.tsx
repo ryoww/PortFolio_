@@ -12,43 +12,39 @@ import HeaderIcon, { HeaderIconProps } from "./HeaderIcon";
 const Header = () => {
     const { colorMode, toggleColorMode } = useColorMode();
 
-    const ButtonProps: HeaderIconProps[] = [
+    const buttonInfos: HeaderIconProps[] = [
         {
-            // id: 1,
             ariaLabel: "GitHub Icon",
             icon: <FaGithub />,
             onClick: () => window.open("https://github.com/ryoww", "_blank"),
             pr: 1,
         },
         {
-            // id: 2,
             ariaLabel: "Twitter Icon",
             icon: <FaTwitter />,
             onClick: () => window.open("https://x.com/5th_ww", "_blank"),
             pr: 1,
         },
         {
-            // id: 3,
             ariaLabel: "Qiita Icon",
             icon:
                 colorMode === "light" ? (
                     <Image
                         src="/src/assets/qiita_black.png"
                         alt="Qiita"
-                        boxSize="20px"
+                        boxSize="18px"
                     />
                 ) : (
                     <Image
                         src="/src/assets/qiita_white.png"
                         alt="Qiita"
-                        boxSize="20px"
+                        boxSize="18px"
                     />
                 ),
             onClick: () => window.open("https://qiita.com/ryo-ww", "_blank"),
             pr: 10,
         },
         {
-            // id: 4,
             ariaLabel: "Toggle Color Mode",
             icon: colorMode === "light" ? <FaMoon /> : <FaSun />,
             onClick: toggleColorMode,
@@ -69,18 +65,29 @@ const Header = () => {
                         Ryo
                     </Heading>
 
-                    <Box gap={0} bg={"blue.400"} w={3} h={3} />
+                    <Box bg={"blue.400"} boxSize={3} />
                 </HStack>
 
                 <Spacer />
 
-                {ButtonProps.map((buttonProp) => (
+                <HStack gap={0}>
+                    <Box bg={"red.400"} boxSize={75}>
+                        test
+                    </Box>
+                    <Box bg={"blue.400"} boxSize={75}>
+                        test
+                    </Box>
+                </HStack>
+
+                <Spacer />
+
+                {buttonInfos.map((buttonInfo, index) => (
                     <HeaderIcon
-                        // key={buttonProp.id}
-                        ariaLabel={buttonProp.ariaLabel}
-                        icon={buttonProp.icon}
-                        onClick={buttonProp.onClick}
-                        pr={buttonProp.pr}
+                        key={index}
+                        ariaLabel={buttonInfo.ariaLabel}
+                        icon={buttonInfo.icon}
+                        onClick={buttonInfo.onClick}
+                        pr={buttonInfo.pr}
                     />
                 ))}
             </HStack>
