@@ -5,9 +5,11 @@ import {
     useColorMode,
     Image,
     Box,
+    Link as ChakraLink,
 } from "@chakra-ui/react";
 import { FaSun, FaMoon, FaGithub, FaTwitter } from "react-icons/fa";
 import HeaderIcon, { HeaderIconProps } from "./HeaderIcon";
+import { Outlet, Link as RouterLink } from "react-router-dom";
 
 const Header = () => {
     const { colorMode, toggleColorMode } = useColorMode();
@@ -70,16 +72,22 @@ const Header = () => {
 
                 <Spacer />
 
-                <HStack gap={0}>
-                    <Box bg={"red.400"} boxSize={75}>
-                        test
-                    </Box>
-                    <Box bg={"blue.400"} boxSize={75}>
-                        test
-                    </Box>
+                <HStack gap={3} pr={4}>
+                    <ChakraLink as={RouterLink} to={"/"}>
+                        Home
+                    </ChakraLink>
+                    <ChakraLink as={RouterLink} to={"/skills"}>
+                        Skills
+                    </ChakraLink>
+                    <ChakraLink as={RouterLink} to={"/profile"}>
+                        Profile
+                    </ChakraLink>
+                    <ChakraLink as={RouterLink} to={"/contact"}>
+                        Contact
+                    </ChakraLink>
                 </HStack>
 
-                <Spacer />
+                {/* <Spacer /> */}
 
                 {buttonInfos.map((buttonInfo, index) => (
                     <HeaderIcon
@@ -91,6 +99,8 @@ const Header = () => {
                     />
                 ))}
             </HStack>
+
+            <Outlet />
         </>
     );
 };
