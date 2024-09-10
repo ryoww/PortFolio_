@@ -5,14 +5,26 @@ import {
     useColorMode,
     Image,
     Box,
+    Text,
     Link as ChakraLink,
 } from "@chakra-ui/react";
 import { FaSun, FaMoon, FaGithub, FaTwitter } from "react-icons/fa";
 import HeaderIcon, { HeaderIconProps } from "./HeaderIcon";
-import { Outlet, Link as RouterLink } from "react-router-dom";
+import { Outlet, useLocation, Link as RouterLink } from "react-router-dom";
+import { getColors } from "../constants/Color";
+
+import useWidth from "../hooks/useWidth";
 
 const Header = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+
+    const location = useLocation();
+
+    const pathname = location.pathname;
+
+    const Colors = getColors(colorMode);
+
+    const width = useWidth();
 
     const buttonInfos: HeaderIconProps[] = [
         {
@@ -81,24 +93,48 @@ const Header = () => {
                         pl={3}
                         size={"4xl"}
                         fontWeight={"bold"}
-                        color={colorMode === "light" ? "gray.800" : "gray.200"}
+                        color={Colors.logoLink}
+                        as={RouterLink}
+                        to={"/"}
                     >
                         Ryo
                     </Heading>
 
-                    <Box bg={"blue.400"} boxSize={3} />
+                    <Box bg={Colors.accent} boxSize={3} />
                 </HStack>
 
                 <Spacer />
 
-                <HStack gap={3} pr={4}>
+                {/* <Text>{pathname}</Text> */}
+
+                <HStack gap={5} pr={10}>
                     {linkInfos.map((linkinfo, index) => (
                         <ChakraLink
                             as={RouterLink}
                             to={linkinfo.to}
                             key={index}
+                            sx={{
+                                color:
+                                    linkinfo.to === pathname
+                                        ? Colors.accent
+                                        : undefined,
+                                borderBottom:
+                                    linkinfo.to === pathname
+                                        ? "2px solid"
+                                        : "none",
+                                borderColor:
+                                    linkinfo.to === pathname
+                                        ? Colors.accent
+                                        : "transparent",
+                                transition: "all 0.3s ease",
+                                _hover: {
+                                    color: Colors.accent,
+                                },
+                            }}
                         >
-                            {linkinfo.linkName}
+                            <Text fontSize={"xl"} fontWeight={"semibold"}>
+                                {linkinfo.linkName}
+                            </Text>
                         </ChakraLink>
                     ))}
                 </HStack>
@@ -115,6 +151,8 @@ const Header = () => {
             </HStack>
 
             <Outlet />
+
+            <Text fontSize={"2xl"}>{width}</Text>
         </>
     );
 };
