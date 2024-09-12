@@ -5,6 +5,7 @@ import { Outlet, Link as RouterLink } from "react-router-dom";
 import { getColors } from "../constants/Color";
 import useWidth from "../hooks/useWidth";
 import HeaderPC from "./HeaderPC";
+import HeaderPhone from "./HeaderPhone";
 
 const Header = () => {
     const { colorMode } = useColorMode();
@@ -36,9 +37,7 @@ const Header = () => {
 
                 <Spacer />
 
-                {/* <HeaderPC /> */}
-
-                {width >= 850 ? <HeaderPC /> : undefined}
+                {width >= 850 ? <HeaderPC /> : <HeaderPhone />}
             </HStack>
 
             <Outlet />

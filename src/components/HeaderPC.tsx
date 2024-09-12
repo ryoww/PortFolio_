@@ -3,14 +3,14 @@ import {
     useColorMode,
     Link as ChakraLink,
     Text,
-    Image,
 } from "@chakra-ui/react";
-import { FaSun, FaMoon, FaGithub, FaTwitter } from "react-icons/fa";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
+// my components
 import HeaderIcon, { HeaderIconProps } from "./HeaderIcon";
 import { getColors } from "../constants/Color";
 
+import { getButtonInfos, LinkInfos } from "../constants/HeaderInfos";
 const HeaderPC = () => {
     const { colorMode, toggleColorMode } = useColorMode();
 
@@ -20,69 +20,16 @@ const HeaderPC = () => {
 
     const pathname = location.pathname;
 
-    const buttonInfos: HeaderIconProps[] = [
-        {
-            ariaLabel: "GitHub Icon",
-            icon: <FaGithub />,
-            onClick: () => window.open("https://github.com/ryoww", "_blank"),
-            pr: 1,
-        },
-        {
-            ariaLabel: "Twitter Icon",
-            icon: <FaTwitter />,
-            onClick: () => window.open("https://x.com/5th_ww", "_blank"),
-            pr: 1,
-        },
-        {
-            ariaLabel: "Qiita Icon",
-            icon:
-                colorMode === "light" ? (
-                    <Image
-                        src="/src/assets/qiita_black.png"
-                        alt="Qiita"
-                        boxSize="18px"
-                    />
-                ) : (
-                    <Image
-                        src="/src/assets/qiita_white.png"
-                        alt="Qiita"
-                        boxSize="18px"
-                    />
-                ),
-            onClick: () => window.open("https://qiita.com/ryo-ww", "_blank"),
-            pr: 10,
-        },
-        {
-            ariaLabel: "Toggle Color Mode",
-            icon: colorMode === "light" ? <FaMoon /> : <FaSun />,
-            onClick: toggleColorMode,
-            pr: 0,
-        },
-    ];
-
-    const linkInfos = [
-        {
-            to: "/",
-            linkName: "Home",
-        },
-        {
-            to: "/skills",
-            linkName: "Skills",
-        },
-        {
-            to: "/profile",
-            linkName: "Profile",
-        },
-        {
-            to: "/contact",
-            linkName: "Contact",
-        },
-    ];
+    // const buttonInfos = getHeaderInfos("buttonInfos");
+    const buttonInfos: HeaderIconProps[] = getButtonInfos(
+        colorMode,
+        toggleColorMode
+    );
 
     return (
         <>
             <HStack gap={5} pr={10}>
-                {linkInfos.map((linkinfo, index) => (
+                {LinkInfos.map((linkinfo, index) => (
                     <ChakraLink
                         as={RouterLink}
                         to={linkinfo.to}
