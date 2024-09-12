@@ -1,4 +1,11 @@
-import { HStack, Spacer, useColorMode, Box, Text } from "@chakra-ui/react";
+import {
+    HStack,
+    Spacer,
+    useColorMode,
+    Box,
+    Text,
+    Heading,
+} from "@chakra-ui/react";
 import { Outlet, Link as RouterLink } from "react-router-dom";
 
 // my components
@@ -16,23 +23,25 @@ const Header = () => {
 
     return (
         <>
-            <HStack w={"100%"} p={{ base: 1, md: 6 }} pl={{ base: 1, md: 8 }}>
-                <HStack gap={2} alignItems={"baseline"} w={"150px"} h={"84"}>
-                    <Text
-                        size={"4xl"}
-                        fontSize={"7xl"}
+            <HStack w={"100%"} pr={{ base: 1, md: 5 }} pl={{ base: 1, md: 8 }}>
+                <HStack
+                    gap={{ base: 1, md: 2 }}
+                    alignItems={"baseline"}
+                    w={{ base: "120px", md: "150px" }}
+                    h={{ base: "65px", md: "84px" }}
+                >
+                    <Heading
+                        size={{ base: "2xl", md: "4xl" }}
+                        fontSize={{ base: "5xl", md: "7xl" }}
                         fontWeight={"bold"}
                         color={Colors.logoLink}
                         as={RouterLink}
                         to={"/"}
-                        w={"130px"}
-                        h={"70px"}
-                        // bg={"red.400"}
                     >
                         Ryo
-                    </Text>
+                    </Heading>
 
-                    <Box bg={Colors.accent} boxSize={3} />
+                    <Box bg={Colors.accent} boxSize={{ base: 2, md: 3 }} />
                 </HStack>
 
                 <Spacer />
