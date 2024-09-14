@@ -1,4 +1,4 @@
-import { Box, Text, Image, VStack, Heading } from "@chakra-ui/react";
+import { Text, Image, VStack, Heading } from "@chakra-ui/react";
 import { TypeAnimation } from "react-type-animation";
 
 const PhoneHome = () => {
@@ -20,16 +20,14 @@ const PhoneHome = () => {
                         sequence={[
                             // Same substring at the start will only be typed out once, initially
                             "Ryotaro \n Shimozawa",
-                            2000, // wait 1s before replacing "Mice" with "Hamsters"
+                            3000, // wait 1s before replacing "Mice" with "Hamsters"
                             "ML Engineer",
-                            2000,
+                            3000,
                             "Front-End \n Engineer",
-                            2000,
-                            // "for Chinchillas",
-                            // 2000,
+                            3000,
                         ]}
                         wrapper="span"
-                        speed={40}
+                        speed={30}
                         style={{ display: "inline-block" }}
                         repeat={Infinity}
                     />
@@ -44,7 +42,13 @@ const PhoneHome = () => {
                     borderRadius={"full"}
                 ></Image>
 
-                <Text mt={"30px"}>下沢 亮太郎</Text>
+                <Heading mt={"30px"} size={"2xl"}>
+                    About this site
+                </Heading>
+
+                <Text textAlign={"center"} mt={"15px"} w={"75%"}>
+                    ここは機械学習/フロントエンドエンジニアになりたい一般学生が作ったポートフォリオサイトです。
+                </Text>
             </VStack>
         </>
     );

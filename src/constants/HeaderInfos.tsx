@@ -106,4 +106,8 @@ export const LinkInfos = [
         to: "/contact",
         linkName: "Contact",
     },
+    {
+        to: "/projects",
+        linkName: "Projects",
+    },
 ];

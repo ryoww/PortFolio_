@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Skills from "./pages/SkillsPC";
 import Profile from "./pages/ProfilePC";
 import Contact from "./pages/ContactPC";
+import Projects from "./pages/Projects";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Route path="skills" element={<Skills />} />
                     <Route path="profile" element={<Profile />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="projects" element={<Projects />} />
                 </Route>
             </Routes>
         </>
