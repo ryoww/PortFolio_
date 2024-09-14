@@ -54,7 +54,7 @@ const Header = () => {
 
             <Footer />
 
-            <Text fontSize={"2xl"}>{width}</Text>
+            {/* <Text fontSize={"2xl"}>{width}</Text> */}
         </>
     );
 };
