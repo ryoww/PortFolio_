@@ -1,13 +1,11 @@
-import { Box, Text } from "@chakra-ui/react";
+import useWidth from "../hooks/useWidth";
+import PcSkills from "./SkillsPC";
+import PhoneSkills from "./SkillsPhone";
 
 const Skills = () => {
-    return (
-        <>
-            <Box bg={"blue.400"} w={"100%"} h={"100%"}>
-                <Text size={"3xl"}>Skills</Text>
-            </Box>
-        </>
-    );
+    const width = useWidth();
+
+    return <>{width >= 850 ? <PcSkills /> : <PhoneSkills />}</>;
 };
 
 export default Skills;

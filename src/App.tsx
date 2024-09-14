@@ -1,9 +1,9 @@
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Skills from "./pages/Skills";
-import Profile from "./pages/Profile";
-import Contact from "./pages/Contact";
+import Skills from "./pages/SkillsPC";
+import Profile from "./pages/ProfilePC";
+import Contact from "./pages/ContactPC";
 
 function App() {
     return (

@@ -1,13 +1,11 @@
-import { Box, Text } from "@chakra-ui/react";
+import useWidth from "../hooks/useWidth";
+import PcProfile from "./ProfilePC";
+import PhoneProfile from "./ProfilePhone";
 
 const Profile = () => {
-    return (
-        <>
-            <Box bg={"blue.400"} w={"100%"} h={"100%"}>
-                <Text size={"3xl"}>Profile</Text>
-            </Box>
-        </>
-    );
+    const width = useWidth();
+
+    return <>{width >= 850 ? <PcProfile /> : <PhoneProfile />}</>;
 };
 
 export default Profile;

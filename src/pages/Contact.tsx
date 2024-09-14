@@ -1,13 +1,11 @@
-import { Box, Text } from "@chakra-ui/react";
+import useWidth from "../hooks/useWidth";
+import PcContact from "./ContactPC";
+import PhoneContact from "./ContactPhone";
 
 const Contact = () => {
-    return (
-        <>
-            <Box bg={"blue.400"} w={"100%"} h={"100%"}>
-                <Text size={"3xl"}>Contact</Text>
-            </Box>
-        </>
-    );
+    const width = useWidth();
+
+    return <>{width >= 850 ? <PcContact /> : <PhoneContact />}</>;
 };
 
 export default Contact;

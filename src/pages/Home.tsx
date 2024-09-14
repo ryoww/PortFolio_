@@ -1,13 +1,11 @@
-import { Box, Text } from "@chakra-ui/react";
+import useWidth from "../hooks/useWidth";
+import PcHome from "./HomePC";
+import PhoneHome from "./HomePhone";
 
 const Home = () => {
-    return (
-        <>
-            <Box bg={"blue.400"} w={"100%"} h={"100%"}>
-                <Text size={"3xl"}>Home</Text>
-            </Box>
-        </>
-    );
+    const width = useWidth();
+
+    return <>{width >= 850 ? <PcHome /> : <PhoneHome />}</>;
 };
 
 export default Home;

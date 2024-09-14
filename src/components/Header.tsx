@@ -13,6 +13,7 @@ import { getColors } from "../constants/Color";
 import useWidth from "../hooks/useWidth";
 import HeaderPC from "./HeaderPC";
 import HeaderPhone from "./HeaderPhone";
+import Footer from "./Footer";
 
 const Header = () => {
     const { colorMode } = useColorMode();
@@ -50,6 +51,8 @@ const Header = () => {
             </HStack>
 
             <Outlet />
+
+            <Footer />
 
             <Text fontSize={"2xl"}>{width}</Text>
         </>
