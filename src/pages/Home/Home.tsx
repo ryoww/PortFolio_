@@ -1,4 +1,4 @@
-import useWidth from "../hooks/useWidth";
+import useWidth from "../../hooks/useWidth";
 import PcHome from "./HomePC";
 import PhoneHome from "./HomePhone";
 

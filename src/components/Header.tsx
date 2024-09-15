@@ -1,11 +1,4 @@
-import {
-    HStack,
-    Spacer,
-    useColorMode,
-    Box,
-    Text,
-    Heading,
-} from "@chakra-ui/react";
+import { HStack, Spacer, useColorMode, Box, Heading } from "@chakra-ui/react";
 import { Outlet, Link as RouterLink } from "react-router-dom";
 
 // my components

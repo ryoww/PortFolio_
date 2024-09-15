@@ -1,6 +1,6 @@
-import useWidth from "../hooks/useWidth";
 import PcContact from "./ContactPC";
 import PhoneContact from "./ContactPhone";
+import useWidth from "../../hooks/useWidth";
 
 const Contact = () => {
     const width = useWidth();
