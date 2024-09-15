@@ -5,7 +5,7 @@ import PhoneSkills from "./SkillsPhone";
 const Skills = () => {
     const width = useWidth();
 
-    return <>{width >= 850 ? <PcSkills /> : <PhoneSkills />}</>;
+    return width >= 850 ? <PcSkills /> : <PhoneSkills />;
 };
 
 export default Skills;

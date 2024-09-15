@@ -5,7 +5,7 @@ import PhoneProfile from "./ProfilePhone";
 const Profile = () => {
     const width = useWidth();
 
-    return <>{width >= 850 ? <PcProfile /> : <PhoneProfile />}</>;
+    return width >= 850 ? <PcProfile /> : <PhoneProfile />;
 };
 
 export default Profile;

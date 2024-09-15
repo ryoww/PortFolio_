@@ -5,7 +5,7 @@ import PhoneHome from "./HomePhone";
 const Home = () => {
     const width = useWidth();
 
-    return <>{width >= 850 ? <PcHome /> : <PhoneHome />}</>;
+    return width >= 850 ? <PcHome /> : <PhoneHome />;
 };
 
 export default Home;
