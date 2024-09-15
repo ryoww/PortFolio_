@@ -37,7 +37,7 @@ const PhoneHome = () => {
                     mt={"80px"}
                     mr={"auto"}
                     ml={"auto"}
-                    src="src/assets/cup.png"
+                    src="/images/cup.png"
                     boxSize={"190px"}
                     borderRadius={"full"}
                 ></Image>
