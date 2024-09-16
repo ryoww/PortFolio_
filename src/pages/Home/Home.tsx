@@ -1,11 +1,11 @@
-import useWidth from "../../hooks/useWidth";
+import useResponsive from "../../hooks/useResponsive";
 import PcHome from "./HomePC";
 import PhoneHome from "./HomePhone";
 
 const Home = () => {
-    const width = useWidth();
+    const { isPhone } = useResponsive();
 
-    return width >= 850 ? <PcHome /> : <PhoneHome />;
+    return isPhone ? <PhoneHome /> : <PcHome />;
 };
 
 export default Home;

@@ -1,11 +1,10 @@
 import PcContact from "./ContactPC";
 import PhoneContact from "./ContactPhone";
-import useWidth from "../../hooks/useWidth";
+import useResponsive from "../../hooks/useResponsive";
 
 const Contact = () => {
-    const width = useWidth();
-
-    return width >= 850 ? <PcContact /> : <PhoneContact />;
+    const { isPhone } = useResponsive();
+    return isPhone ? <PhoneContact /> : <PcContact />;
 };
 
 export default Contact;

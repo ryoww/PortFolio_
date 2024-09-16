@@ -3,17 +3,17 @@ import { Outlet, Link as RouterLink } from "react-router-dom";
 
 // my components
 import { getColors } from "../constants/Color";
-import useWidth from "../hooks/useWidth";
 import HeaderPC from "./HeaderPC";
 import HeaderPhone from "./HeaderPhone";
 import Footer from "./Footer";
+import useResponsive from "../hooks/useResponsive";
 
 const Header = () => {
     const { colorMode } = useColorMode();
 
     const Colors = getColors(colorMode);
 
-    const width = useWidth();
+    const { isPhone } = useResponsive();
 
     return (
         <>
@@ -40,7 +40,7 @@ const Header = () => {
 
                 <Spacer />
 
-                {width >= 850 ? <HeaderPC /> : <HeaderPhone />}
+                {isPhone ? <HeaderPhone /> : <HeaderPC />}
             </HStack>
 
             <Outlet />

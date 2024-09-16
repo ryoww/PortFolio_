@@ -1,11 +1,10 @@
-import useWidth from "../../hooks/useWidth";
+import useResponsive from "../../hooks/useResponsive";
 import PcSkills from "./SkillsPC";
 import PhoneSkills from "./SkillsPhone";
 
 const Skills = () => {
-    const width = useWidth();
-
-    return width >= 850 ? <PcSkills /> : <PhoneSkills />;
+    const { isPhone } = useResponsive();
+    return isPhone ? <PhoneSkills /> : <PcSkills />;
 };
 
 export default Skills;
