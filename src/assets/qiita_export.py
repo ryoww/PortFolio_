@@ -19,8 +19,8 @@ def convert_transparent_to_color(input_image_path, output_image_path_white, outp
             black_data.append((0, 0, 0, 0))  # 透明な黒
         else:
             # 透過されていない部分をそれぞれ白か黒で塗りつぶす
-            white_data.append((255, 255, 255, 255))  # 不透明な白
-            black_data.append((0, 0, 0, 255))  # 不透明な黒
+            white_data.append((239, 239, 240, 255))  # 不透明な白
+            black_data.append((26, 32, 44, 255))  # 不透明な黒
     
     # 新しい画像を作成して、データを設定
     white_img = Image.new("RGBA", img.size)

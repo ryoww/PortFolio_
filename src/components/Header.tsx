@@ -1,89 +1,53 @@
-import {
-    Heading,
-    HStack,
-    Spacer,
-    useColorMode,
-    Image,
-    Box,
-} from "@chakra-ui/react";
-import { FaSun, FaMoon, FaGithub, FaTwitter } from "react-icons/fa";
-import HeaderIcon, { HeaderIconProps } from "./HeaderIcon";
+import { HStack, Spacer, useColorMode, Box, Heading } from "@chakra-ui/react";
+import { Outlet, Link as RouterLink } from "react-router-dom";
+
+// my components
+import { getColors } from "../constants/Color";
+import useWidth from "../hooks/useWidth";
+import HeaderPC from "./HeaderPC";
+import HeaderPhone from "./HeaderPhone";
+import Footer from "./Footer";
 
 const Header = () => {
-    const { colorMode, toggleColorMode } = useColorMode();
+    const { colorMode } = useColorMode();
 
-    const ButtonProps: HeaderIconProps[] = [
-        {
-            // id: 1,
-            ariaLabel: "GitHub Icon",
-            icon: <FaGithub />,
-            onClick: () => window.open("https://github.com/ryoww", "_blank"),
-            pr: 1,
-        },
-        {
-            // id: 2,
-            ariaLabel: "Twitter Icon",
-            icon: <FaTwitter />,
-            onClick: () => window.open("https://x.com/5th_ww", "_blank"),
-            pr: 1,
-        },
-        {
-            // id: 3,
-            ariaLabel: "Qiita Icon",
-            icon:
-                colorMode === "light" ? (
-                    <Image
-                        src="/src/assets/qiita_black.png"
-                        alt="Qiita"
-                        boxSize="20px"
-                    />
-                ) : (
-                    <Image
-                        src="/src/assets/qiita_white.png"
-                        alt="Qiita"
-                        boxSize="20px"
-                    />
-                ),
-            onClick: () => window.open("https://qiita.com/ryo-ww", "_blank"),
-            pr: 10,
-        },
-        {
-            // id: 4,
-            ariaLabel: "Toggle Color Mode",
-            icon: colorMode === "light" ? <FaMoon /> : <FaSun />,
-            onClick: toggleColorMode,
-            pr: 0,
-        },
-    ];
+    const Colors = getColors(colorMode);
+
+    const width = useWidth();
 
     return (
         <>
-            <HStack w={"100%"} p={6}>
-                <HStack gap={2} alignItems={"baseline"}>
+            <HStack w={"100%"} pr={{ base: 1, md: 5 }} pl={{ base: 1, md: 8 }}>
+                <HStack
+                    gap={{ base: 1, md: 2 }}
+                    alignItems={"baseline"}
+                    w={{ base: "120px", md: "150px" }}
+                    h={{ base: "65px", md: "84px" }}
+                >
                     <Heading
-                        pl={3}
-                        size={"4xl"}
+                        size={{ base: "2xl", md: "4xl" }}
+                        fontSize={{ base: "5xl", md: "7xl" }}
                         fontWeight={"bold"}
-                        color={colorMode === "light" ? "gray.800" : "gray.200"}
+                        color={Colors.logoLink}
+                        as={RouterLink}
+                        to={"/"}
                     >
                         Ryo
                     </Heading>
 
-                    <Box gap={0} bg={"blue.400"} w={3} h={3} />
+                    <Box bg={Colors.accent} boxSize={{ base: 2, md: 3 }} />
                 </HStack>
 
                 <Spacer />
 
-                {ButtonProps.map((buttonProp) => (
-                    <HeaderIcon
-                        // key={buttonProp.id}
-                        ariaLabel={buttonProp.ariaLabel}
-                        icon={buttonProp.icon}
-                        onClick={buttonProp.onClick}
-                        pr={buttonProp.pr}
-                    />
-                ))}
+                {width >= 850 ? <HeaderPC /> : <HeaderPhone />}
             </HStack>
+
+            <Outlet />
+
+            <Footer />
+
+            {/* <Text fontSize={"2xl"}>{width}</Text> */}
         </>
     );
 };
