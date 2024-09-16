@@ -8,7 +8,7 @@ const Steps = () => {
                 const isLastStep = index === steps.length - 1;
 
                 return (
-                    <HStack key={step.title} w={"78%"} align={"start"}>
+                    <HStack key={step.title} w={"78%"} align={"start"} mt={2}>
                         {/* アイコンと垂直線のVStack */}
                         <VStack alignItems="center">
                             <Box
@@ -35,9 +35,9 @@ const Steps = () => {
                             {index !== steps.length - 1 && (
                                 <Box
                                     w={"2px"}
-                                    h={"40px"}
+                                    h={"50px"}
                                     bg={"blue.300"}
-                                    mb={2}
+                                    // mb={2}
                                 />
                             )}
                         </VStack>

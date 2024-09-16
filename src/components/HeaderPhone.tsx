@@ -44,6 +44,7 @@ const HeaderPhone = () => {
                 icon={<HamburgerIcon />}
                 size={"md"}
                 onClick={onOpen}
+                colorScheme="black"
             ></IconButton>
 
             <Drawer
