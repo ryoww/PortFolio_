@@ -40,7 +40,7 @@ const PhoneHome = () => {
                     src="/images/cup.png"
                     boxSize={"190px"}
                     borderRadius={"full"}
-                ></Image>
+                />
 
                 <Heading mt={"30px"} size={"2xl"}>
                     About this site

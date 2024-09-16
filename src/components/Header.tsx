@@ -17,7 +17,12 @@ const Header = () => {
 
     return (
         <>
-            <HStack w={"100%"} pr={{ base: 1, md: 5 }} pl={{ base: 1, md: 8 }}>
+            <HStack
+                w={"100%"}
+                pr={{ base: 1, md: 5 }}
+                pl={{ base: 1, md: 8 }}
+                mb={3}
+            >
                 <HStack
                     gap={{ base: 1, md: 2 }}
                     alignItems={"baseline"}
