@@ -29,6 +29,22 @@ const Header = () => {
                     w={{ base: "120px", md: "150px" }}
                     h={{ base: "65px", md: "84px" }}
                 >
+                    {/* <svg
+                        width="200"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <text
+                            x="10"
+                            y="40"
+                            font-family="Arial"
+                            font-size="40"
+                            fill="white"
+                            fontWeight={"bold"}
+                        >
+                            Ryo.
+                        </text>
+                    </svg> */}
                     <Heading
                         size={{ base: "2xl", md: "4xl" }}
                         fontSize={{ base: "5xl", md: "7xl" }}
