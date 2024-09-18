@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "deploy": "sudo cp -r ./docs/* /var/www/html/ && sudo systemctl restart nginx.service",
     "lint": "eslint .",
     "preview": "vite preview"
   },
