@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename="PortFolio_">
             <ChakraProvider theme={theme}>
                 <ColorModeScript
                     initialColorMode={theme.config.initialColorMode}
