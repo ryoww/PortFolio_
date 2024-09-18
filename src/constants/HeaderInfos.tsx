@@ -103,11 +103,11 @@ export const LinkInfos = [
         linkName: "Profile",
     },
     {
-        to: "/contact",
-        linkName: "Contact",
-    },
-    {
         to: "/projects",
         linkName: "Projects",
+    },
+    {
+        to: "/contact",
+        linkName: "Contact",
     },
 ];

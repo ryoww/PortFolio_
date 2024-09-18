@@ -1,8 +1,8 @@
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Skills from "./pages/Skills/SkillsPC";
-import Profile from "./pages/Profile/ProfilePC";
+import Skills from "./pages/Skills/Skills";
+import Profile from "./pages/Profile/Profile";
 import Contact from "./pages/Contact/Contact";
 import Projects from "./pages/Projects/Projects";
 

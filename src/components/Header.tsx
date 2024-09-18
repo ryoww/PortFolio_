@@ -3,21 +3,26 @@ import { Outlet, Link as RouterLink } from "react-router-dom";
 
 // my components
 import { getColors } from "../constants/Color";
-import useWidth from "../hooks/useWidth";
 import HeaderPC from "./HeaderPC";
 import HeaderPhone from "./HeaderPhone";
-import Footer from "./Footer";
+// import Footer from "./Footer";
+import useResponsive from "../hooks/useResponsive";
 
 const Header = () => {
     const { colorMode } = useColorMode();
 
     const Colors = getColors(colorMode);
 
-    const width = useWidth();
+    const { isPhone } = useResponsive();
 
     return (
         <>
-            <HStack w={"100%"} pr={{ base: 1, md: 5 }} pl={{ base: 1, md: 8 }}>
+            <HStack
+                w={"100%"}
+                pr={{ base: 1, md: 5 }}
+                pl={{ base: 1, md: 8 }}
+                mb={3}
+            >
                 <HStack
                     gap={{ base: 1, md: 2 }}
                     alignItems={"baseline"}
@@ -40,12 +45,12 @@ const Header = () => {
 
                 <Spacer />
 
-                {width >= 850 ? <HeaderPC /> : <HeaderPhone />}
+                {isPhone ? <HeaderPhone /> : <HeaderPC />}
             </HStack>
 
             <Outlet />
 
-            <Footer />
+            {/* <Footer /> */}
 
             {/* <Text fontSize={"2xl"}>{width}</Text> */}
         </>
