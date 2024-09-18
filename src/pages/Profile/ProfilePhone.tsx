@@ -1,53 +1,7 @@
-import {
-    Heading,
-    Text,
-    VStack,
-    Image,
-    Icon,
-    Box,
-    Stepper,
-    Step,
-    StepIndicator,
-    StepTitle,
-    StepDescription,
-    StepSeparator,
-    useSteps,
-} from "@chakra-ui/react";
-import { FaBaby, FaProjectDiagram, FaSchool } from "react-icons/fa";
+import { Heading, Text, VStack, Image } from "@chakra-ui/react";
 import Steps from "../../components/Steps/Steps";
 
-const BabyIcon = () => <Icon as={FaBaby} size={5} />;
-
-const SchoolIcon = () => <Icon as={FaSchool} size={5} />;
-
-const ProjectIcon = () => <Icon as={FaProjectDiagram} size={5} />;
-
-const steps = [
-    {
-        title: "2005年",
-        description: "埼玉県春日部市にて爆誕",
-        icon: <BabyIcon />,
-    },
-    { title: "2020年", description: "都立高専 入学", icon: <SchoolIcon /> },
-    {
-        title: "2022年",
-        description: "機械学習に目覚める",
-        icon: <ProjectIcon />,
-    },
-    { title: "2025年3月", description: "高専卒業予定", icon: <SchoolIcon /> },
-    {
-        title: "2025年4月",
-        description: "静岡大学情報学部 入学予定",
-        icon: <SchoolIcon />,
-    },
-];
-
 const PhoneProfile = () => {
-    const { activeStep } = useSteps({
-        index: steps.length - 1,
-        count: steps.length,
-    });
-
     return (
         <>
             <VStack>
@@ -77,7 +31,7 @@ const PhoneProfile = () => {
                     なお研究室は無線通信の模様
                 </Text>
 
-                <Text textAlign={"center"} w={"80%"} mt={3} fontSize={"lg"}>
+                <Text textAlign={"center"} w={"90%"} mt={3} fontSize={"lg"}>
                     最近フロントエンドにハマりつつある......
                 </Text>
 

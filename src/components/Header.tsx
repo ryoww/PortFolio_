@@ -5,7 +5,7 @@ import { Outlet, Link as RouterLink } from "react-router-dom";
 import { getColors } from "../constants/Color";
 import HeaderPC from "./HeaderPC";
 import HeaderPhone from "./HeaderPhone";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import useResponsive from "../hooks/useResponsive";
 
 const Header = () => {
@@ -50,7 +50,7 @@ const Header = () => {
 
             <Outlet />
 
-            <Footer />
+            {/* <Footer /> */}
 
             {/* <Text fontSize={"2xl"}>{width}</Text> */}
         </>

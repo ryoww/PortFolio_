@@ -3,7 +3,7 @@ import { steps } from "../../constants/ProfileInfos";
 
 const Steps = () => {
     return (
-        <VStack w={"100%"} gap={0}>
+        <VStack w={"100%"} gap={0} mb={"30px"}>
             {steps.map((step, index) => {
                 const isLastStep = index === steps.length - 1;
 
@@ -41,7 +41,7 @@ const Steps = () => {
                                 />
                             )}
                         </VStack>
-                        {/* テキストと説明 */}
+
                         <VStack gap={2} ml={3} align={"start"} w={"100%"}>
                             <Text fontSize={"2xl"} fontWeight={"bold"}>
                                 {step.title}

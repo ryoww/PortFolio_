@@ -4,12 +4,9 @@ import { TypeAnimation } from "react-type-animation";
 const PhoneHome = () => {
     return (
         <>
-            <VStack
-                w={"100%"}
-                // bg={"blue.900"}
-            >
+            <VStack w={"100%"}>
                 <Heading
-                    ml={2}
+                    ml={3}
                     fontWeight={"bold"}
                     size={"3xl"}
                     alignSelf={"flex-start"}
@@ -46,7 +43,7 @@ const PhoneHome = () => {
                     About this site
                 </Heading>
 
-                <Text textAlign={"center"} mt={"15px"} w={"75%"}>
+                <Text textAlign={"center"} mt={"15px"} mb={"30px"} w={"75%"}>
                     ここは機械学習/フロントエンドエンジニアになりたい一般学生が作ったポートフォリオサイトです。
                 </Text>
             </VStack>
