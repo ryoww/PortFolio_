@@ -30,13 +30,19 @@ export const getButtonInfos = (
             icon:
                 colorMode === "light" ? (
                     <Image
-                        src="/images/qiita_black.png"
+                        src={
+                            import.meta.env.VITE_REPO_NAME +
+                            "/images/qiita_black.png"
+                        }
                         alt="Qiita"
                         boxSize="18px"
                     />
                 ) : (
                     <Image
-                        src="/images/qiita_white.png"
+                        src={
+                            import.meta.env.VITE_REPO_NAME +
+                            "/images/qiita_white.png"
+                        }
                         alt="Qiita"
                         boxSize="18px"
                     />
@@ -72,13 +78,19 @@ export const getOnlyIcons = (colorMode: string) => {
             icon:
                 colorMode === "light" ? (
                     <Image
-                        src="/images/qiita_black.png"
+                        src={
+                            import.meta.env.VITE_REPO_NAME +
+                            "/images/qiita_black.png"
+                        }
                         alt="Qiita"
                         boxSize="18px"
                     />
                 ) : (
                     <Image
-                        src="/images/qiita_white.png"
+                        src={
+                            import.meta.env.VITE_REPO_NAME +
+                            "/images/qiita_white.png"
+                        }
                         alt="Qiita"
                         boxSize="18px"
                     />

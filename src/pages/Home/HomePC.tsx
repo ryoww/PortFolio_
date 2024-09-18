@@ -66,7 +66,10 @@ const PcHome = () => {
                             mt={"80px"}
                             mr={"auto"}
                             ml={"auto"}
-                            src="/images/cup.png"
+                            src={
+                                import.meta.env.VITE_REPO_NAME +
+                                "/images/cup.png"
+                            }
                             boxSize={"250px"}
                             borderRadius={"full"}
                         />

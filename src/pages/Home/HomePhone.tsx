@@ -34,7 +34,7 @@ const PhoneHome = () => {
                     mt={"80px"}
                     mr={"auto"}
                     ml={"auto"}
-                    src="/images/cup.png"
+                    src={import.meta.env.VITE_REPO_NAME + "/images/cup.png"}
                     boxSize={"190px"}
                     borderRadius={"full"}
                 />
@@ -44,7 +44,8 @@ const PhoneHome = () => {
                 </Heading>
 
                 <Text textAlign={"center"} mt={"15px"} mb={"30px"} w={"75%"}>
-                    ここは機械学習/フロントエンドエンジニアになりたい一般学生が作ったポートフォリオサイトです。
+                    ここは機械学習/フロントエンドエンジニアになりたい一般学生が作ったポートフォリオサイトです。{" "}
+                    {/* {import.meta.env.VITE_REPO_NAME} */}
                 </Text>
             </VStack>
         </>
