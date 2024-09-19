@@ -10,24 +10,27 @@ import {
 import { TypeAnimation } from "react-type-animation";
 import SNSIcons from "../../components/SNSIcons";
 import { getOnlyIcons } from "../../constants/HeaderInfos";
+import useResponsive from "../../hooks/useResponsive";
 
 const PcHome = () => {
     const { colorMode } = useColorMode();
 
     const icons = getOnlyIcons(colorMode);
 
+    const { isTablet } = useResponsive();
+
     return (
         <>
             <Box w={"100%"} alignItems={"center"} display={"flex"} h={"70vh"}>
                 <HStack w={"100%"} gap={0}>
-                    <VStack w={"70%"} alignItems={"flex-start"}>
+                    <VStack w={"60%"} alignItems={"flex-start"}>
                         <Text
                             w={"90%"}
                             fontWeight={"bold"}
                             fontSize={"100px"}
                             alignSelf={"center"}
                             // justifyContent={"center"}
-                            h={"450px"}
+                            h={isTablet ? "450px" : "300px"}
                         >
                             Hello, I'm <br />
                             <TypeAnimation
@@ -47,11 +50,11 @@ const PcHome = () => {
                             />
                         </Text>
 
-                        <Heading w={"90%"} size={"2xl"} ml={"100px"}>
+                        <Heading w={"90%"} size={"xl"} ml={"100px"}>
                             About this site
                         </Heading>
 
-                        <Text w={"70%"} fontSize={"3xl"} ml={"150px"}>
+                        <Text w={"80%"} fontSize={"xl"} ml={"110px"}>
                             ここは機械学習/フロントエンドエンジニアになりたい一般学生が
                             作ったポートフォリオサイトです。
                         </Text>
@@ -64,15 +67,15 @@ const PcHome = () => {
                     <VStack alignSelf={"center"} flex={1}>
                         <Image
                             mt={"80px"}
-                            mr={"auto"}
-                            ml={"auto"}
                             src={
                                 import.meta.env.VITE_REPO_NAME +
                                 "/images/cup.png"
                             }
-                            boxSize={"250px"}
+                            boxSize={"350px"}
                             borderRadius={"full"}
                         />
+
+                        <Text mt={"30px"} fontSize={"xl"}></Text>
                     </VStack>
                 </HStack>
             </Box>
