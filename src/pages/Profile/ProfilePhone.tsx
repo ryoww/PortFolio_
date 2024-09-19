@@ -11,7 +11,7 @@ const PhoneProfile = () => {
                     mt={"40px"}
                     mr={"auto"}
                     ml={"auto"}
-                    src="/images/cup.png"
+                    src={import.meta.env.VITE_REPO_NAME + "/images/cup.png"}
                     boxSize={"190px"}
                     borderRadius={"full"}
                 />
