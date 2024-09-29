@@ -1,27 +1,72 @@
-import { Box, Heading, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import {
+    Box,
+    Heading,
+    ListItem,
+    Stack,
+    Text,
+    UnorderedList,
+    VStack,
+} from "@chakra-ui/react";
 
-import { IoStarSharp } from "react-icons/io5";
+export const Skills_dict = {
+    "Python ★★★★☆": {
+        "Machine Leaning": ["PyTorch", "Scikit-learn"],
+        "Flask ": ["LINE Bot Server", "SQL CRUD Server"],
+        "Scrape ": ["Requests", "Selenium"],
+        "Transmission Simulater": ["Reproduction IEEE 802.11"],
+    },
+};
+
+export const SkillsTree = () => {
+    return (
+        <>
+            <VStack w={"80%"} mt={5} alignItems={"start"}>
+                {Object.entries(Skills_dict).map(
+                    ([skill, categories], index) => (
+                        <Box key={`skill-${index}`}>
+                            <Text fontSize={"3xl"} fontWeight={"bold"}>
+                                {skill}
+                            </Text>
+                            <VStack ml={3}>
+                                <UnorderedList fontSize={"2xl"}>
+                                    {Object.entries(categories).map(
+                                        ([category, skills], subIndex) => (
+                                            <ListItem
+                                                key={`category-${index}-${subIndex}`}
+                                            >
+                                                {category}
+                                                <Stack fontSize={"xl"}>
+                                                    {skills.map(
+                                                        (skill, skillIndex) => (
+                                                            <Text
+                                                                key={`skill-${index}-${subIndex}-${skillIndex}`}
+                                                            >
+                                                                {skill}
+                                                            </Text>
+                                                        )
+                                                    )}
+                                                </Stack>
+                                            </ListItem>
+                                        )
+                                    )}
+                                </UnorderedList>
+                            </VStack>
+                        </Box>
+                    )
+                )}
+            </VStack>
+        </>
+    );
+};
 
 const PhoneSkills = () => {
     return (
         <>
-            <VStack gap={0} bg={"gray.400"}>
+            <VStack gap={0}>
                 <Heading size={"3xl"}>Skills</Heading>
 
-                <HStack w={"90%"} mt={5} bg={"teal.500"}>
-                    <Text fontSize={"3xl"} fontWeight={"bold"}>
-                        Python
-                    </Text>
-                    <Icon boxSize={"50px"} bg={"blue.400"}>
-                        <IoStarSharp />
-                    </Icon>
-
-                    <Text></Text>
-                </HStack>
+                <SkillsTree />
             </VStack>
-            <Box bg={"blue.400"} w={"100%"} h={"100%"}>
-                <Text size={"3xl"}>PhoneSkills</Text>
-            </Box>
         </>
     );
 };
