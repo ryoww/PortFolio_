@@ -15,6 +15,7 @@ export const Skills_dict = {
         "Scrape ": ["Requests", "Selenium"],
         "Transmission Simulater": ["Reproduction IEEE 802.11"],
     },
+    Linux: {},
 };
 
 export const SkillsTree = () => {
