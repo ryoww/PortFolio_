@@ -21,6 +21,10 @@ const Contact = () => {
                     お問い合わせ
                     <ExternalLinkIcon ml={1} pb={1} />
                 </Link>
+
+                <Link href="mailto:ryotaroshimozawa.0121@gmail.com">
+                    ryotaroshimozawa.0121@gmail.com
+                </Link>
             </VStack>
         </>
     );
